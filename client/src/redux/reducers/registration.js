@@ -9,6 +9,7 @@ function registrationReducer(state = initialState, action) {
     case USER.REGISTER_REQUEST:
       return { registering: true };
     case USER.REGISTER_SUCCESS:
+      localStorage.setItem('user', JSON.stringify(action.payload.user));
       return {
         ...state,
         ...action.payload,

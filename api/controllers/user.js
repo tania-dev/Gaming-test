@@ -38,12 +38,17 @@ exports.registration = async (req, res) => {
             
       await user.save();
 
+      const _user = await User.findOne({ email }).select(
+        '_id name email'
+      );
+
       res.cookie("token", token, {
         expiresIn: '24h',
         httpOnly: true
       });
 
       res.status(201).json({
+        user: _user,
         message: "success",
         status: 201
       });

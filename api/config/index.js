@@ -2,10 +2,10 @@ require('dotenv').config({ silent: true });
 
 module.exports = {
   app: {
-    name: 'Rank Tracker',
+    name: 'Gaming Test',
     env: process.env.APP_ENV || 'development',
     secret: process.env.APP_SECRET || 'verysecretkey',
-    port: process.env.APP_PORT || 3000,
+    port: process.env.APP_PORT || 5000,
     domain: process.env.APP_DOMAIN || 'http://localhost',
   },
   db: {
