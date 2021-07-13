@@ -1,4 +1,4 @@
-import { COUNTRIES } from '../constants/index'
+import { COUNTRIES, USER } from '../constants/index'
 
 const getCountry = () => ({
     type: COUNTRIES.LOAD_SUCCESS
@@ -14,8 +14,20 @@ const setCountry = country => ({
     payload: country
 })
 
+const makeRegistration = user => ({
+    type: USER.REGISTER_REQUEST,
+    payload: user
+})
+
+const registerUserSuccess = payload => ({
+    type: USER.REGISTER_SUCCESS,
+    payload
+})
+
 export {
     getCountry,
     setCountry,
-    getCountryByName
+    makeRegistration,
+    getCountryByName,
+    registerUserSuccess
 }

@@ -1,13 +1,197 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+  background: #F9F9F9;
+  font-family: 'Montserrat', sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.login-area, .register-area, .forget-password-area, .reset-password-area {
+  margin-top: 60px;
+}
+
+.login-form, .register-form, .forget-password-form, .reset-password-form {
+  padding: 40px 45px;
+  border-radius: 5px;
+  background-color: #ffffff;
+  max-width: 650px;
+  margin: auto;
+}
+
+.login-form h2, .register-form h2, .forget-password-form h2, .reset-password-form h2 {
+  margin-bottom: 30px;
+  font-size: 25px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 15px;
+  font-weight: 600;
+  position: relative;
+}
+.login-form h2::before, .register-form h2::before {
+  position: absolute;
+  content: "";
+  left: 0;
+  bottom: 0;
+  border-bottom: 1px solid #136;
+  height: 100%;
+  width: 100px;
+}
+.login-form form .form-group, .register-form form .form-group {
+  margin-bottom: 25px;
+}
+.login-form form .form-group label, .register-form form .form-group label, .forget-password-form form .form-group label, .reset-password-form form .form-group label{
+  display: block;
+  margin-bottom: 10px;
+  color: #656565;
+  font-weight: 400;
+  font-size: 16px;
+}
+.login-form form .form-group .form-control, .register-form form .form-group .form-control, .forget-password-form form .form-group .form-control {
+  height: 60px;
+  padding: 0 0 0 7px;
+  line-height: initial;
+  color: #292929;
+  background-color: transparent !important;
+  border: 1px solid #f1f1f1;
+  border-radius: 5px;
+  -webkit-box-shadow: unset !important;
+  box-shadow: unset !important;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  font-size: 15px;
+  font-weight: 500;
+  width: 100%;
+}
+.login-form form .form-group .form-control:focus, .register-form form .form-group .form-control:focus, .forget-password-form form .form-group .form-control:focus, .reset-password-form form .form-group .form-control:focus {
+  border: 1px solid #136;
+}
+.login-form form .form-group .form-control:focus::-webkit-input-placeholder,
+.register-form form .form-group .form-control:focus::-webkit-input-placeholder,
+.forget-password-form form .form-group .form-control:focus::-webkit-input-placeholder,
+.reset-password-form form .form-group .form-control:focus::-webkit-input-placeholder {
+  color: transparent;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+.login-form form .form-group .form-control:focus:-ms-input-placeholder,
+.register-form form .form-group .form-control:focus:-ms-input-placeholder {
+  color: transparent;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+.login-form form .form-group .form-control:focus::-ms-input-placeholder,
+.register-form form .form-group .form-control:focus::-ms-input-placeholder {
+  color: transparent;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+.login-form form .form-group .form-control:focus::placeholder,
+.register-form form .form-group .form-control:focus::placeholder {
+  color: transparent;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+.login-form form .lost-your-password,
+.register-form form .lost-your-password,
+.forget-password-form form .lost-your-password {
+  text-align: right;
+}
+.login-form form .lost-your-password a {
+  display: inline-block;
+  position: relative;
+  font-weight: 500;
+  font-size: 15px;
+  color: #656565;
+}
+.login-form form .lost-your-password a::before {
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  content: "";
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  background-color: #eee;
+}
+.login-form form .lost-your-password a::after {
+  width: 0;
+  height: 1px;
+  position: absolute;
+  left: 0;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  bottom: 0;
+  content: "";
+  background-color: #ed1d24;
+}
+.login-form form .lost-your-password a:hover::before {
+  width: 0;
+}
+.login-form form .lost-your-password a:hover::after {
+  width: 100%;
+}
+.login-form form .form-check {
+  font-weight: 500;
+  font-size: 15px;
+  color: #656565;
+}
+.login-form form .form-check-input {
+  position: absolute;
+  margin-top: 4px;
+  margin-left: -18px;
+}
+.login-form form button,
+.register-form form button {
+  border: none;
+  margin-top: 15px;
+  padding: 15px 30px;
+  width: 100%;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #ed1d24;
+  color: #fff;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+.login-form form button:hover,
+.register-form form button:hover {
+  background-color: #ed1d24;
+}
+.login-form .important-text {
+  margin-top: 15px;
+  text-align: center;
+}
+.login-form .important-text p {
+  font-size: 15px;
+  color: #656565;
+}
+.login-form .important-text p a {
+  color: #656565;
+  font-weight: 600;
+}
+.login-form .important-text p a:hover {
+  color: #136;
+}
+.login-form.mb-30 {
+  margin-bottom: 30px;
+}
+
+.forget-password-form .form-group {
+  margin-bottom: 0 !important;
+}
+
+.reset-password-form button {
+  margin-top: 0 !important;
+}
+
+.SubmitButton {
+  margin: 9px ​15px !important;
+}
+
+.SubmitCash {
+  margin: 15px ​15px !important;
+}
+
+.FormRowLabel {
+  margin-bottom: 0;
 }
