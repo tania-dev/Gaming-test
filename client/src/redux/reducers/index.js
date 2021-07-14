@@ -1,10 +1,12 @@
 import { combineReducers } from 'redux';
 
 import countriesReducer from './country';
+import loginReducer from './login';
 import registrationReducer from './registration';
 
 const rootReducer = combineReducers({
-	country: countriesReducer,
+	login: loginReducer,
+	countryObj: countriesReducer,
 	registration: registrationReducer
 });
 

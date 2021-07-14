@@ -24,9 +24,26 @@ const registerUserSuccess = payload => ({
     payload
 })
 
+const makeLogin = user => ({
+    type: USER.LOGIN_REQUEST,
+    payload: user
+})
+
+const loginUserSuccess = payload => ({
+    type: USER.LOGIN_SUCCESS,
+    payload
+})
+
+const makeLogout = () => ({
+    type: USER.LOGOUT
+})
+
 export {
+    makeLogin,
+    makeLogout,
     getCountry,
     setCountry,
+    loginUserSuccess,
     makeRegistration,
     getCountryByName,
     registerUserSuccess

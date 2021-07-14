@@ -1,13 +1,29 @@
-import { useState, useContext, useRef } from "react"
+import { useEffect, useRef } from "react"
+import { useDispatch, useSelector } from "react-redux"
+
 import { Link, useHistory } from "react-router-dom"
+import { makeLogin } from "../../redux/actions";
 
 function Login() {
     const email = useRef();
 	const password = useRef();
+	const dispatch = useDispatch()
 	const history = useHistory();
+    const login = useSelector(state => state.login);
+
+	useEffect(() => {
+        if(login && Object.keys(login).length > 0 && login.isAuthenticated) {
+            history.push('/');
+        }
+    }, [login, history])
 
     const handleLogin = e => {
         e.preventDefault();
+		const user = {
+            email: email.current.value,
+            password: password.current.value
+        }
+        dispatch(makeLogin(user));
     }
 
     return (

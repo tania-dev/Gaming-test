@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect, useRef } from "react"
+import { useEffect, useRef } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { Link, useHistory } from "react-router-dom"
 import { makeRegistration } from "../../redux/actions";
@@ -15,7 +15,7 @@ function Registration() {
         if(registration && Object.keys(registration).length > 0 && registration.isAuthenticated) {
             history.push('/');
         }
-    }, [registration])
+    }, [registration, history])
 
     const handleRegistration = e => {
         e.preventDefault();

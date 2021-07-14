@@ -1,0 +1,33 @@
+.home-section {
+    width: 70%;
+    margin: 0 auto;
+    .search-section {
+        margin-top: 25px;
+        .logout-btn {
+            margin-bottom: 20px;
+            float: right;
+        }
+        .search-btn {
+            margin-top: 20px;
+        }
+    }
+    .country-info-section {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 30px;
+        .info {
+            flex: 1;
+            .country-name {
+                font-size: 45px;
+                margin-top: 0;
+                margin-bottom: 20px;
+            }
+        }
+        .flag-section {
+            flex: 1;
+            img {
+                width: 100%;
+            }
+        }
+    }
+}

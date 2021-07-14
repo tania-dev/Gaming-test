@@ -1,5 +1,3 @@
-import { useDispatch, useSelector } from "react-redux";
-import { getCountryByName } from "./redux/actions";
 import {
   BrowserRouter as Router,
   Route,
@@ -8,16 +6,9 @@ import {
 import { PrivateRoute } from "./components/PrivateRoute";
 import Login from "./pages/authentications/Login";
 import Registration from "./pages/authentications/Registration";
-import Home from "./pages/country/Home";
+import Home from "./pages/Home/Home";
 
 function App() {
-  const dispatch = useDispatch()
-  const country = useSelector(state => state.country);
-
-  const getCountry = () => {
-    dispatch(getCountryByName("bangladesh"));
-  }
-
   return (
     <Router>
       <main className="main-content">
