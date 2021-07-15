@@ -3,7 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom"
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
-import { getCountryByName, makeLogout } from "../../redux/actions";
+import { getCountryByName } from "../../redux/actions";
+import Loader from "../../components/loader/Loader";
 import './Home.scss';
 
 function Home() {
@@ -16,30 +17,23 @@ function Home() {
 
     useEffect(() => {
         if(state.countryObj.country && 
-            Object.keys(state.countryObj.country).length > 1 && 
-            countryName) {
+            Object.keys(state.countryObj.country).length > 1 && countryName) {
             setStatus("completed")
             setCountry(state.countryObj.country)
         }
         if(!state.login) {
             history.push("/login")
         }
-    }, [state, history])
+    }, [state, history, countryName])
 
     const getCountry = () => {
+        setStatus("loading");
         dispatch(getCountryByName(countryName));
-    }
-
-    const handleLogout = () => {
-        dispatch(makeLogout());
     }
 
     return (
         <div className="home-section">
             <div className="search-section">
-                <Button variant="contained" color="secondary" className="logout-btn" onClick={handleLogout}>
-                    Logout
-                </Button>
                 <div className="input-field">
                   <TextField id="outlined-basic" fullWidth label="Country Name" variant="outlined" value={countryName} onChange={e => setCountryName(e.target.value)} />
                   <Button variant="contained" color="secondary" className="search-btn" onClick={getCountry} fullWidth>
@@ -48,6 +42,7 @@ function Home() {
                 </div>
             </div>
             {!country && <h2>Not Found</h2>}
+            {status === "loading" && <Loader />}
             {status === "completed" && country && 
                 <div className="country-info-section">
                     <div className="info">
