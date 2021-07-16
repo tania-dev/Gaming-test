@@ -1,4 +1,4 @@
-import { COUNTRIES, USER } from '../constants/index'
+import { COUNTRIES, USER, GAME } from '../constants/index'
 
 const getCountry = () => ({
     type: COUNTRIES.LOAD_SUCCESS
@@ -38,7 +38,19 @@ const makeLogout = () => ({
     type: USER.LOGOUT
 })
 
+const gameStart = coins => ({
+    type: GAME.GAME_LOAD,
+    payload: coins
+})
+
+const setCoins = coins => ({
+    type: GAME.GAME_LOAD_SUCCESS,
+    payload: coins
+})
+
 export {
+    setCoins,
+    gameStart,
     makeLogin,
     makeLogout,
     getCountry,
