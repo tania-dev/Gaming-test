@@ -43,9 +43,9 @@ const gameStart = coins => ({
     payload: coins
 })
 
-const setCoins = coins => ({
+const setCoins = data => ({
     type: GAME.GAME_LOAD_SUCCESS,
-    payload: coins
+    payload: data
 })
 
 export {

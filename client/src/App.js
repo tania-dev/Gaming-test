@@ -14,8 +14,8 @@ import './App.css';
 function App() {
   return (
     <Router>
+      <Navbar />
       <main className="main-content">
-        <Navbar />
         <Switch>
           <PrivateRoute exact path="/" component={Home} />
           <PrivateRoute path="/game" component={Game} />

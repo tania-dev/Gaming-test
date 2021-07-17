@@ -6,9 +6,9 @@ export function* handleGame(params) {
     try {
         const response = yield call(requestGame, params.payload);
         const { data } = response;
-        console.log(data)
         const result = {
-            country: data
+            items: data.items,
+            coins: data.coins
         }
         yield put(setCoins(result))
     } catch(err) {
