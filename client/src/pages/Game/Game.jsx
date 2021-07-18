@@ -4,6 +4,11 @@ import Button from '@material-ui/core/Button';
 import './Game.scss'
 import { gameStart } from '../../redux/actions';
 
+const formatter = new Intl.ListFormat('en', {
+    style: 'long',
+    type: 'conjunction'
+})
+
 function Game() {
     const [totalCoins, setTotalCoins] = useState(20);
     const dispatch = useDispatch();
@@ -24,9 +29,7 @@ function Game() {
                     <Button variant="contained" color="secondary" onClick={handleRoll}>Roll</Button>
                 </div>
                 <div className="items-section">
-                    {state.game.items && state.game.items.map((it, index) => (
-                        <p key={index}>{it}</p>
-                    ))}
+                    <p>{formatter.format(state.game.items)}</p>
                     <h3>Total Coins: {state.game.coins}</h3>
                 </div>
             </div>

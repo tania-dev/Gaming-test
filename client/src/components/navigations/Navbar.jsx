@@ -20,20 +20,12 @@ function Navbar() {
         dispatch(makeLogout());
     }
 
-    const goToHome = () => {
-        history.push("/");
-    }
-
-    const goToGame = () => {
-        history.push("/game");
-    }
-
     return (
         <nav className="navbar-section">
             <div className="navbar-items">
-                    <Link to="/">Home</Link>
-                    <Link to="/game">Game</Link>
-                    <Button>Logout</Button>
+                <Link to="/">Home</Link>
+                <Link to="/game">Game</Link>
+                <Button onClick={handleLogout}>Logout</Button>
             </div>
         </nav>
     )
