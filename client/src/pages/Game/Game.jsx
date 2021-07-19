@@ -81,15 +81,15 @@ function Game() {
                 </div>
                 <div className="coins-section">
                     <h3>You have: <span className="have-coins">{state.game.coins} coins</span></h3>
-                    <div style={{minHeight: '205px',minWidth: '234px'}}>
-                        {state.game.msg && !loading && <div>
+                    <div style={{minHeight: '261px',minWidth: '234px'}}>
+                        <div>
                                 <hr/>
-                                <p>{state.game.msg}</p>
-                                <p style={{color:'green'}}>Reward adds: {state.game.rewards}</p>
-                                <p style={{color:'red'}}>Game charge: -1</p>
+                                {!loading ? <p>{state.game.msg}</p> : 'spinning....'}
+                                <p style={{color:'green'}}>Reward adds: {!loading ? state.game.rewards : '-'}</p>
+                                <p style={{color:'red'}}>Game charge: {!loading ? '-1': '-1' }</p>
                             </div>
-                        }
-                        {!loading && <img width="150px" src={clickHere}/>}
+
+                        {!loading && <img width="150px" src={clickHere} alt="click here"/>}
                     </div>
                     <div className="slot-section">
                         <Button
