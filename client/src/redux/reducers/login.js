@@ -18,10 +18,10 @@ function loginReducer(state = initialState, action) {
     case USER.LOGIN_FAILURE:
       return {};
     case USER.LOGOUT:
-      localStorage.removeItem('user')
-      return state.isAuthenticated = null;
+      localStorage.removeItem('user');
+      return (state.isAuthenticated = null);
     default:
-      return state
+      return state;
   }
 }
 

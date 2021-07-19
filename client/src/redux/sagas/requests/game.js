@@ -1,8 +1,8 @@
-import axios from "axios";
+import axios from 'axios';
 
-export function requestGame(coins) {
-    return axios.request({
-        method: "get",
-        url: `/api/game?coins=${coins}`
-    })
+export function requestGame(data) {
+  return axios.request({
+    method: 'get',
+    url: `/api/game?coins=${data.coins}&userId=${data.userId}`,
+  });
 }

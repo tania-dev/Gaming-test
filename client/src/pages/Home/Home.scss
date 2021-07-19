@@ -1,27 +1,27 @@
 .home-section {
-    .search-section {
-        margin-top: 25px;
-        .search-btn {
-            margin-top: 20px;
-        }
+  .search-section {
+    margin-top: 25px;
+    .search-btn {
+      margin-top: 20px;
     }
-    .country-info-section {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 30px;
-        .info {
-            flex: 1;
-            .country-name {
-                font-size: 45px;
-                margin-top: 0;
-                margin-bottom: 20px;
-            }
-        }
-        .flag-section {
-            flex: 1;
-            img {
-                width: 100%;
-            }
-        }
+  }
+  .country-info-section {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    .info {
+      flex: 1;
+      .country-name {
+        font-size: 45px;
+        margin-top: 0;
+        margin-bottom: 20px;
+      }
     }
+    .flag-section {
+      flex: 1;
+      img {
+        width: 100%;
+      }
+    }
+  }
 }

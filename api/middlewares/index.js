@@ -1,7 +1,7 @@
 const cors = require('cors');
 const helmet = require('helmet');
 const bodyParser = require('body-parser');
-const cookieParser = require('cookie-parser')
+const cookieParser = require('cookie-parser');
 const compression = require('compression');
 const morgan = require('morgan');
 

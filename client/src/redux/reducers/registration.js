@@ -18,7 +18,7 @@ function registrationReducer(state = initialState, action) {
     case USER.REGISTER_FAILURE:
       return {};
     default:
-      return state
+      return state;
   }
 }
 

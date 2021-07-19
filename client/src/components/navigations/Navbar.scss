@@ -1,17 +1,17 @@
 .navbar-section {
-    background: #F50157;
-    padding: 15px;
-    .navbar-items {
-        text-align: right;
-        a {
-            text-decoration: none;
-            padding: 6px 10px;
-            color: #fff;
-            font-weight: 500;
-        }
-        button {
-            margin-left: 10px;
-            color: #fff;
-        }
+  background: #f50157;
+  padding: 15px;
+  .navbar-items {
+    text-align: right;
+    a {
+      text-decoration: none;
+      padding: 6px 10px;
+      color: #fff;
+      font-weight: 500;
     }
+    button {
+      margin-left: 10px;
+      color: #fff;
+    }
+  }
 }

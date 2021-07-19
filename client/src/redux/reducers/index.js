@@ -6,10 +6,10 @@ import loginReducer from './login';
 import registrationReducer from './registration';
 
 const rootReducer = combineReducers({
-	game: gameReducer,
-	login: loginReducer,
-	countryObj: countriesReducer,
-	registration: registrationReducer
+  game: gameReducer,
+  login: loginReducer,
+  countryObj: countriesReducer,
+  registration: registrationReducer,
 });
 
 export default rootReducer;
