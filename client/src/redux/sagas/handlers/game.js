@@ -8,7 +8,9 @@ export function* handleGame(params) {
         const { data } = response;
         const result = {
             items: data.items,
-            coins: data.coins
+            coins: data.coins,
+            msg: data.msg,
+            rewards: data.rewards
         }
         yield put(setCoins(result))
     } catch(err) {

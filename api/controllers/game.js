@@ -12,13 +12,15 @@ exports.startGame = async (req, res) => {
       items.push(reel2[index2])
       const index3 = Math.floor(Math.random()*((reel3.length-1) -0+1));
       items.push(reel3[index3])
-      
-      let updatedCoins = processCoins(items)
-      updatedCoins += coins;
+
+      let updatedCoins = processCoins(items);
+      coins += updatedCoins.rewards;
 
       res.status(200).json({
         items,
-        coins: updatedCoins
+        coins: coins,
+        rewards: updatedCoins.rewards,
+        msg: updatedCoins.msg
       })
 
     } catch(err) {
@@ -28,19 +30,19 @@ exports.startGame = async (req, res) => {
 
 function processCoins(items) {
     if(items[0] === 'cherry' && items[1] === 'cherry' && items[2] === 'cherry') {
-        return 50;
+        return {rewards: 50, msg: 'You got 3 cherry in a row 🥳'};
     } else if((items[0] === 'cherry' && items[1] === 'cherry') || (items[1] === 'cherry' && items[2] === 'cherry')) {
-        return 40;
+        return {rewards: 40, msg: 'You got 2 cherry in a row 😁'};
     } else if(items[0] === 'apple' && items[1] === 'apple' && items[2] === 'apple') {
-        return 20;
+        return {rewards: 20, msg: 'You got 3 apples in a row 😉'};
     } else if((items[0] === 'apple' && items[1] === 'apple') || (items[1] === 'apple' && items[2] === 'apple')) {
-        return 10;
+        return {rewards: 10, msg: 'You got 2 apple in a row 😋'};
     } else if(items[0] === 'banana' && items[1] === 'banana' && items[2] === 'banana') {
-        return 15;
+        return {rewards: 15, msg: 'You got 3 banana in a row 🙃'};
     } else if((items[0] === 'banana' && items[1] === 'banana') || (items[1] === 'banana' && items[2] === 'banana')) {
-        return 5;
+        return {rewards: 5, msg: 'You got 2 banana in a row 🙂'};
     } else if(items[0] === 'lemon' && items[1] === 'lemon' && items[2] === 'lemon') {
-        return 3;
-    } 
-    return 0;
+        return {rewards: 3, msg: 'You got 3 lemon in a row 🙂'};
+    }
+    return {rewards: 0, msg: 'You got nothing, Please try again 😟'};
 }
