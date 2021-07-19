@@ -2,7 +2,9 @@ import { GAME } from '../constants';
 
 const initialState = {
   items: [],
-  coins: 20,
+  coins: JSON.parse(localStorage.getItem('user'))
+    ? JSON.parse(localStorage.getItem('user')).coins
+    : 20,
 };
 
 const gameReducer = (state = initialState, action) => {

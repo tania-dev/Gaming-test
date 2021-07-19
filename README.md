@@ -12,7 +12,7 @@ step 3
 Setup Mongo db info on
 
 1. Gaming-test/db
-2. .env file from .env.example
+2. Copy content from .env.example to .env 
 
         DB_USER=yourUserName
         DB_PASS=yourPassWord

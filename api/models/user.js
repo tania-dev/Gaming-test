@@ -21,6 +21,7 @@ const userSchema = new Schema({
   coins: {
     type: Number,
     required: false,
+    default: 20
   },
 });
 

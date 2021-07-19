@@ -10,12 +10,21 @@ function Game() {
   const [totalCoins, setTotalCoins] = useState(20);
   const [loading, setLoading] = useState(false);
   const [initial, setInitial] = useState(true);
+  const [userName, setUserName] = useState('');
   const dispatch = useDispatch();
   const state = useSelector((state) => state);
 
   useEffect(() => {
     document.title = 'Game';
-    setTotalCoins(state.game.coins);
+    let user = JSON.parse(localStorage.getItem('user'));
+    setTotalCoins(user ? user.coins : 20);
+    setUserName(user ? user.name : 20);
+  }, []);
+
+  useEffect(() => {
+    document.title = 'Game';
+    let user = JSON.parse(localStorage.getItem('user'));
+    setTotalCoins(user ? user.coins : 20);
   }, [state]);
 
   const handleRoll = () => {
@@ -96,9 +105,9 @@ function Game() {
           )}
         </div>
         <div className="coins-section">
+          <h2>{userName}</h2>
           <h3>
-            You have:{' '}
-            <span className="have-coins">{state.game.coins} coins</span>
+            You have: <span className="have-coins">{totalCoins} coins</span>
           </h3>
           <div style={{ minHeight: '261px', minWidth: '234px' }}>
             <div>

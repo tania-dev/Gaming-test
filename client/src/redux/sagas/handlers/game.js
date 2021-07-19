@@ -13,6 +13,9 @@ export function* handleGame(params) {
       rewards: data.rewards,
     };
     yield put(setCoins(result));
+    let user = JSON.parse(localStorage.getItem('user'));
+    user.coins = result.coins;
+    localStorage.setItem('user', JSON.stringify(user));
   } catch (err) {
     console.log(err);
   }
